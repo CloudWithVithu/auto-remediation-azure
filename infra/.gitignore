@@ -1,11 +1,4 @@
-# Ignore large/unwanted files
-*.zip
-*.vhd
-*.exe
-*.iso
-*.psd
-*.log
-*.png
-*.jpg
-*.jpeg
-*.bak
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
