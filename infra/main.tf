@@ -61,6 +61,12 @@ resource "azurerm_monitor_action_group" "vm_action_group" {
     email_address           = "vithushanvisuvalingam@gmail.com"
     use_common_alert_schema = true
   }
+
+  webhook_receiver {
+  name                    = "logicapp-hook"
+  service_uri             = "https://prod-05.eastasia.logic.azure.com:443/workflows/35b6993d9c154ca497aaae251855d560/triggers/When_a_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=kz_nz8WQMgtjM6_tqd0iwtb7Cg8m6k_rTlXVvEjEDbk"
+  use_common_alert_schema = true
+  }
 }
 
 resource "azurerm_monitor_metric_alert" "high_cpu_alert" {
