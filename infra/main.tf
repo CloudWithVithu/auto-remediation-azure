@@ -50,3 +50,43 @@ resource "azurerm_windows_virtual_machine" "vm" {
     version   = "latest"
   }
 }
+
+resource "azurerm_monitor_action_group" "vm_action_group" {
+  name                = "autoheal-action-group"
+  resource_group_name = azurerm_resource_group.main.name
+  short_name          = "autohealAG"
+
+  email_receiver {
+    name                    = "admin"
+    email_address           = "vithushanvisuvalingam@gmail.com"
+    use_common_alert_schema = true
+  }
+}
+
+resource "azurerm_monitor_metric_alert" "high_cpu_alert" {
+  name                = "high-cpu-alert"
+  resource_group_name = azurerm_resource_group.main.name
+  description         = "Alert when CPU usage > 80%"
+  severity            = 3
+  enabled             = true
+  frequency           = "PT1M"
+  window_size         = "PT5M"
+  scopes              = [azurerm_windows_virtual_machine.vm.id]
+
+  criteria {
+    metric_namespace = "Microsoft.Compute/virtualMachines"
+    metric_name      = "Percentage CPU"
+    aggregation      = "Average"
+    operator         = "GreaterThan"
+    threshold        = 80
+  }
+
+  action {
+    action_group_id = azurerm_monitor_action_group.vm_action_group.id
+  }
+
+  tags = {
+    environment = "autoheal"
+  }
+}
+
