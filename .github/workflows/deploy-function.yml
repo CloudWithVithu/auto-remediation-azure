@@ -33,3 +33,4 @@ jobs:
       run: |
         cd restart_vm
         func azure functionapp publish ${{ secrets.FUNCTION_APP_NAME }} --python
+
