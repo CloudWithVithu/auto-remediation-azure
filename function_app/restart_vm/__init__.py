@@ -27,3 +27,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse(f"Error: {e}", status_code=500)
 
 
+# Testing CI/CD .........
