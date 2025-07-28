@@ -25,3 +25,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     except Exception as e:
         logging.error(f"Error restarting VM: {e}")
         return func.HttpResponse(f"Error: {e}", status_code=500)
+
+# Test trigger for CI/CD
+
