@@ -96,3 +96,4 @@ resource "azurerm_monitor_metric_alert" "high_cpu_alert" {
   }
 }
 
+
