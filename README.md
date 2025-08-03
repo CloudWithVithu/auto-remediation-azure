@@ -43,27 +43,25 @@ The outcome is a self-healing lab environment. When a VM exhibits sustained high
 
 ## 📁 Folder Structure
 
-.
-├── auto-remediation-azure/
-├── ├── infra/ # Terraform IaC code (alerts, logic app, etc.)
-├── │ ├── main.tf
-├── │ ├── variables.tf
-├── │ ├── outputs.tf
-├── │ └── terraform.tfvars
-├── ├── function_app/ # Azure Function App for remediation
-├── │ └── restart_vm/
-├── │ ├── init.py # Core logic to restart the VM
-├── │ ├── function.json
-├── │ └── tests/
-├── │ └── test_function.py
-├── ├── .github/
-├── │ └── workflows/
-├── │ ├── deployInfra.yml # CI/CD for Terraform
-├── │ └── deployFunction.yml # CI/CD for Azure Function
-├── ├── .gitignore
-├── ├── README.md
-└── └── requirements.txt
-
+auto-remediation-azure/
+├── infra/ # Terraform IaC code (alerts, logic app, etc.)
+│ ├── main.tf
+│ ├── variables.tf
+│ ├── outputs.tf
+│ └── terraform.tfvars
+├── function_app/ # Azure Function App for remediation
+│ └── restart_vm/
+│ ├── init.py # Core logic to restart the VM
+│ ├── function.json
+│ └── tests/
+│ └── test_function.py
+├── .github/
+│ └── workflows/
+│ ├── deployInfra.yml # CI/CD for Terraform
+│ └── deployFunction.yml # CI/CD for Azure Function
+├── .gitignore
+├── README.md
+└── requirements.txt
 
 ---
 
