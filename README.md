@@ -43,7 +43,7 @@ The outcome is a self-healing lab environment. When a VM exhibits sustained high
 
 ## 📁 Folder Structure
 
-"""
+\\\
 auto-remediation-azure/
 ├── infra/                  # Terraform IaC code (alerts, logic app, etc.)
 │   ├── main.tf
@@ -63,7 +63,7 @@ auto-remediation-azure/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-"""
+\\\
 
 
 ---
